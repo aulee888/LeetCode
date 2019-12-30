@@ -11,11 +11,13 @@ class Solution:
             else:
                 if char == []:
                     valid = False
+                    
                 else:
                     if paren[char.pop()] != s[i]:
                         valid = False
 
                         break
+                        
         if char != []:
             valid = False
 
