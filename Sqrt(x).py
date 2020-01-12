@@ -29,6 +29,3 @@ class Solution:
         else:
             alist = [i for i in range(0, x)]
             return binary_search(alist, 0, x)
-
-print(Solution().mySqrt(2147395599))
-print(Solution().mySqrt(100))
