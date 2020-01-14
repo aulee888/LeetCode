@@ -3,10 +3,10 @@ class Solution:
         """Implements a recursive binary search"""
         def binary_search(pos, first, last):
             mid = (first + last) // 2
-            print(first, last)
+            print('First: {}, Mid: {}, Last: {}, Value: {}'.format(first, mid, last, numbers[mid]))
 
-            if first >= last:
-                mid = last
+            #if first == last:
+            #    return False
 
             if numbers[pos] + numbers[mid] == target:
                 return [pos+1, mid+1]  # Accounts for non-zero index
@@ -28,5 +28,5 @@ class Solution:
                 return result
 
 
-l1 = [5, 25, 75]
-print(Solution().twoSum(l1, 100))
+l1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+print(Solution().twoSum(l1, 27))
