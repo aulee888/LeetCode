@@ -1,26 +1,28 @@
 class Solution:
-    """Recursive Solution"""
-    def recClimbStairs(self, n: int) -> int:
+    def rec_climbStairs(self, n: int) -> int:
+        """Recursive Solution"""
         if n <= 2:
             return n
 
         else:
-            step1 = self.recClimbStairs(n - 1)
-            step2 = self.recClimbStairs(n - 2)
+            step1 = self.rec_climbStairs(n - 1)
+            step2 = self.rec_climbStairs(n - 2)
 
             return step1 + step2
 
-    def dpClimbStairs(self, n: int, known: dict) -> int:
+    def dp_climbStairs(self, n: int) -> int:
         """Dynamic Programming Solution w/ Recursion"""
+        def helper(steps: int, known: dict) -> int:
+            if steps in known:
+                return known[steps]
 
-        if n in known:
-            return known[n]
+            if steps <= 2:
+                return steps
 
-        if n <= 2:
-            return n
+            ways = (helper(steps - 1, known)
+                    + helper(steps - 2, known))
+            known[steps] = ways
 
-        ways = (self.dpClimbStairs(n - 1, known)
-                + self.dpClimbStairs(n - 2, known))
-        known[n] = ways
+            return ways
 
-        return ways
+        return helper(n, {})
