@@ -12,6 +12,7 @@ class Solution:
         prev = dummy
 
         while head:
+
             # Corner case; if there's only one element in linked list
             # Skips consecutive elements
             while head and head.val == val:
@@ -21,7 +22,7 @@ class Solution:
             prev.next = head
             prev = prev.next
 
-            # Keep moving head pointer until end of list
+            # In case skipped to end of list
             if head:
                 head = head.next
 
