@@ -4,7 +4,7 @@ class Solution:
             if first > last:
                 return -1
 
-            mid = first + (first - last) // 2  # Minimizes integer overflow
+            mid = first + (last - first) // 2  # Minimizes integer overflow
 
             if target == nums[mid]:
                 return mid
